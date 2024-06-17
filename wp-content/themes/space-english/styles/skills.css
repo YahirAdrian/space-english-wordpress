@@ -1,0 +1,131 @@
+/* IFRAMES */
+iframe:not(.youtube-frame){
+    width: 60%;
+    max-width: 800px;
+    min-width: 300px;
+    height: 80vh;
+    max-height: 600px;
+}
+
+
+.activity-preview{
+    display: block;
+    width: 100%;
+    margin: auto;
+}
+
+.activity-preview img{
+    margin: auto;
+    display: block;
+    width: 50%;
+}
+
+.padlet-embed iframe{
+    width: 100%;
+    max-width: none;
+}
+/* Reading skills */
+
+.reading-box{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid gray;
+    border-radius: 1rem;
+}
+
+.reading-content{
+    padding: 2rem;
+}
+
+.reading-box img{
+    min-width: 30vw;
+}
+
+.activity{
+    margin-top: 3rem;
+    padding: 1rem;
+    border-bottom: 2px solid gray;
+}
+
+.activity:last-of-type{
+    border-bottom: none;
+}
+
+@media(max-width: 768px){
+    /* Until 768 pixels */
+    .reading-box{
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .reading-box img{
+        width: 100%;
+        border-radius: 1rem 1rem 0 0 ;
+    }
+
+    iframe{
+        width: 85%;
+        min-width: none;
+        max-width: 100%;
+    }
+
+}
+
+/* Writing */
+
+.writing-box .first-image{
+    width: 350px;
+    margin-bottom: 3rem;
+    margin-left: 2rem;
+    margin-top: 3rem;
+}
+
+/* Vocabulary */
+.vocabulary-card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    border-radius: 0.5rem;
+    border: 1px solid #787878;
+    padding: 0;
+}
+
+.vocabulary-card img{
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.vocabulary-card p.description{
+    font-size: 1.25rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #F8F8F800;
+    background-color: #275348ef;
+    width: 100%;
+    height: 0%;
+    overflow: hidden;
+    padding: 0;
+    transition: all 200ms ease-in-out;
+}
+
+.vocabulary-card:hover .description{
+    width: 100%;
+    height: 100%;
+    color: #F8F8F8;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    
+}
+
+/* Grammar */
+.grammar-grid-use div{
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border: 1px solid #787878;
+}
+
+.grammar-grid-use{
+    height: 100%;
+}

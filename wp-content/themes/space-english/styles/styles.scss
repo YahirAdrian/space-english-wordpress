@@ -1,0 +1,250 @@
+@use "sass:map";
+
+
+// Customn color settings
+$primary: #252B48;
+$secondary: #3D8171;
+$accent: #E8CF24;
+$white: #F8F8F8;
+$dark: #0B0B0B;
+$danger: #EB5757;
+$info: #56CCF2;
+
+// Color variants
+$palette-variants: (
+    "primary-2": #2A335F,
+    "primary-3": #3A4783,
+    "secondary-2": #4F9D8A,
+    "secondary-3": #3EAC92,
+    "accent-2": #ECD639,
+    "accent-3": #FCEA6E
+    );
+    
+    $gray-scale: (
+        "gray-100": #DDE6ED,
+        "gray-300": #C9CFD4,
+        "gray-500": #9FA3A7,
+        "gray-700": #787878,
+        "gray-900": #3B3B3B,
+    );
+        
+
+    $navbar-dark-active-color: #FCEA6E;
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+// Website custom styles
+body{
+    font-family: 'Lato', sans-serif;
+}
+
+.font-nunito{
+    font-family: 'Nunito', sans-serif;
+}
+
+.btn-transparent{
+    background: none;
+    border: none;
+}
+
+#search-form{
+    position: relative;
+}
+
+#search-button{
+    position: absolute;
+    right: 0.5rem;
+    top: 0.125rem;
+}
+
+h1, h2, h3, h4, h4, h6{
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+}
+
+// Color variant classes
+
+@each  $variant, $color in $palette-variants{
+    .bg-#{$variant}{
+        background-color: $color;
+    }
+
+    .text-#{$variant}{
+        color: $variant;
+    }
+}
+
+@each $variant, $color in $gray-scale{
+    .bg-#{$variant}{
+        background-color: $color;
+    }
+
+    .text-#{$variant}{
+        color: $color;
+    }
+}
+
+// Styles for navbar
+@media(min-width: 992px){
+
+    #search-form input[type="search"]{
+        border-radius: 1rem;
+        transition-property: width, border-radius;
+        transition-timing-function: cubic-bezier(0.72, 0.17, 0.63, 0.7);
+        transition-duration: 400ms;
+    }
+
+    #search-form input[type="search"]:focus{
+        width: 350px;
+        border-radius: 2rem;
+    }
+}
+
+// Styles for banner
+.banner{
+    min-height: 500px;
+    position: relative;
+    height: calc(100vh - 90px);
+    color: $dark;
+}
+
+.header-card{
+    position: absolute;
+    bottom: 10%;
+    left: 3rem;
+    max-width: 650px;
+    padding: 1rem 1rem 3rem 1rem;
+    background: transparentize($white, 0.4);
+}
+
+@media (max-width: 992px){
+    .header-card{
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        max-width: none;
+    }
+}
+
+// Styles for topics list
+
+.topic-fluid{
+
+    border-radius: 0.5rem;
+    background-color: map-get($gray-scale, "gray-100");
+
+    img{
+        max-width: 260px;
+    }
+
+    a{
+        max-width: 250px;
+    }
+}
+
+.topic-half{
+    border-radius: 0.5rem;
+    background-color: map-get($gray-scale, "gray-100");
+
+    p{
+        display: -webkit-box;
+
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4;
+        overflow: hidden;
+    }
+}
+
+
+.not-available{
+    position: relative;
+    
+    &:hover{
+        transition: background-color 300ms;
+
+        &::before{
+            content: 'Available soon...';
+            position: absolute;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            font-size: 32px;
+            color: $white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: transparentize($dark, 0.4);
+        }
+    }
+}
+
+
+@media(min-width: 768px){
+    .topic-half img{
+        height: max-content;
+        align-self: center;
+        width: 200px;
+    }
+}
+
+@media (max-width: 768px){
+    .topics-box{
+        padding: 1rem;
+    }
+    .topic-fluid img{
+        max-width: none;
+        width: 100%;
+    }
+}
+
+// Skills styles
+.skill{
+    transition-property: transform background-color;
+    transition-duration: 250ms;
+    transition-timing-function: ease-in-out;
+    max-width: 200px;
+    border-radius: 0.5rem;
+
+    &:hover{
+        transform: scale(1.05);
+        background-color: transparentize(map-get($palette-variants, "secondary-3"), 0.3);
+    }
+}
+
+// Grammar tables
+.grammar-table{
+    margin: auto;
+    width: 50%;
+    thead{
+        border-bottom: 1px solid $dark;
+        th{
+            padding: 0.5rem;
+            p{
+                margin-bottom: 0;
+            }
+            background-color: transparentize(map-get($palette-variants, "secondary-2"), 0.4);
+            text-align: center;
+            color: $dark;
+            &:nth-child(n+2){
+                border-left: 1px solid $dark;
+            }
+        }
+    }
+
+    tbody{
+        tr{
+            td{
+                padding: 0.25rem 1rem;
+                border-bottom: 1px solid $dark;
+                &:nth-child(n+2){
+                    border-left: 1px solid $dark;
+                }
+            }
+        }
+    }
+
+    strong{
+        color: $primary;
+        font-weight: bolder;
+    }
+}
+
