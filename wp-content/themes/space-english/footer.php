@@ -1,7 +1,7 @@
 <footer class="footer container-fluid bg-primary text-white p-5">
     <div class="d-flex align-items-center mb-3">
-        <img src="src/icons/logo-light.svg" alt="Space English logo" width="64" height="64"/>
-        <h3 class="d-inline fw-bold fs-2">Space English</h3>
+        <img src="<?php site_icon_url( 'medium') ?>" alt="Space English logo" width="64" height="64"/>
+        <h3 class="d-inline fw-bold fs-2"><?= get_bloginfo('name'); ?></h3>
     </div>
 
     <div class="row">
@@ -12,11 +12,11 @@
             <div class="d-flex flex-column mb-3">
                 <h4>Contact us</h4>
                 <div class="mb-3">
-                    <img src="src/icons/mail.svg" alt="Mail icon" width="24" height="24"/>
+                    <img src="<?= get_template_directory_uri() . '/src/icons/mail.svg' ?>" alt="Mail icon" width="24" height="24"/>
                     <span class="text-gray-100 ms-2">contactmail@spaceenglish.com</span>
                 </div>
                 <div class="mb-3">
-                    <img src="src/icons/phone.svg" alt="Phone icon" width="24" height="24"/>
+                    <img src="<?= get_template_directory_uri() . '/src/icons/phone.svg' ?>" alt="Phone icon" width="24" height="24"/>
                     <span class="text-gray-100 ms-2">+52 9871408375</span>
                 </div>
             </div>
@@ -25,15 +25,15 @@
                 <h4>Follow us on our social media</h4>
                 <div class="d-flex gap-3 mt-3">
                     <div>
-                        <img src="src/icons/facebook.svg" alt="Phone icon" width="24" height="24"/>
+                        <img src="<?= get_template_directory_uri(). '/src/icons/facebook.svg' ?>" alt="Phone icon" width="24" height="24"/>
                         <span>/SpaceEnglish</span>
                     </div>
                     <div>
-                        <img src="src/icons/youtube.svg" alt="Phone icon" width="24" height="24"/>
+                        <img src="<?= get_template_directory_uri() . '/src/icons/youtube.svg' ?>" alt="Phone icon" width="24" height="24"/>
                         <span>/SpaceEnglish</span>
                     </div>
                     <div>
-                        <img src="src/icons/tiktok.svg" alt="Phone icon" width="24" height="24"/>
+                        <img src="<?= get_template_directory_uri() . '/src/icons/tiktok.svg' ?>" alt="Phone icon" width="24" height="24"/>
                         <span>@spaceenglish</span>
                     </div>
                 </div>
@@ -63,7 +63,7 @@
 
         <!-- Fourth column -->
         <div class=" col-lg-2 mb-4">
-            <img src="src/icons/uqroo-logo 1.png" alt="Universidad Autónoma de Quitana Roo logo"/>
+            <img src="<?= get_template_directory_uri() . '/src/icons/uqroo-logo 1.png' ?>" alt="Universidad Autónoma de Quitana Roo logo"/>
         </div>
     </div>
 

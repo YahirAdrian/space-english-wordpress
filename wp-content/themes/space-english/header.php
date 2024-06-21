@@ -4,15 +4,14 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="<?php bloginfo('description'); ?>"/>
-        <title><?php wp_title() ?></title>
         <?php wp_head(); ?>
     </head>
     <body>
         
         <nav class="navbar navbar-expand-lg bg-primary px-1 px-lg-4 navbar-dark position-fixed z-1 w-100">
-            <a href="/" class="navbar-brand d-flex align-items-center">
+            <a href="<?= get_site_url() . '/' ?>" class="navbar-brand d-flex align-items-center">
                 <img src="<?php site_icon_url('medium'); ?>" alt="Space English logo" width="64" height="64"/>
-                <h1 class="font-nunito text-white fw-bold d-inline">Space English</h1>
+                <h1 class="font-nunito text-white fw-bold d-inline"><?= get_bloginfo('name') ?></h1>
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,7 +22,7 @@
                 <form class="d-flex mx-3" role="search" id="search-form">
                     <input class="form-control ms-2 ms-lg-4" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn-transparent" type="submit" id="search-button">
-                        <img src="src/icons/search.svg" alt="Search icon" width="18" height="18"/>
+                        <img src="<?= get_template_directory_uri() . '/src/icons/search.svg' ?>" alt="Search icon" width="18" height="18"/>
                     </button>
                 </form>
                 <ul class="navbar-nav mt-3 mt-lg-0 mb-2 mb-lg-0 fw-bold">
