@@ -1,3 +1,5 @@
+<?php require_once get_template_directory() . '/utils/utils.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -5,12 +7,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="<?php bloginfo('description'); ?>"/>
         <?php wp_head(); ?>
+
+        <style>
+            .banner{
+                background: linear-gradient(0deg, rgb(0 0 0 / 60%) 0%, rgba(0, 0, 0, 0.25) 100%), url('<?= ternaryArgs($args, 'image_url', 'http://space-english.com/wp-content/uploads/2024/06/studying-together.jpg'); ?>'), lightgray -12.493px -447.687px / 100.92% 204.8% no-repeat;
+                background-position: bottom center, bottom;
+                box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.25);
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        </style>
     </head>
     <body>
         
         <nav class="navbar navbar-expand-lg bg-primary px-1 px-lg-4 navbar-dark position-fixed z-1 w-100">
             <a href="<?= get_site_url() . '/' ?>" class="navbar-brand d-flex align-items-center">
-                <img src="<?php site_icon_url('medium'); ?>" alt="Space English logo" width="64" height="64"/>
+                <img src="<?php site_icon_url('small'); ?>" alt="Space English logo" width="64" height="64"/>
                 <h1 class="font-nunito text-white fw-bold d-inline"><?= get_bloginfo('name') ?></h1>
             </a>
 
@@ -60,10 +72,10 @@
         </nav>
         <div class="nav-block" style="width: 100%; height: 90px;"></div>
 
-        <header class="container-fluid banner" id="homeBanner">
+        <header class="container-fluid banner">
             <div class="header-card">
-                <h2 class="fw-bold font-nunito">English resources to practice together</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores labore non illo obcaecati tempore voluptate soluta eos et ea natus amet libero itaque cum quam quod beatae, impedit minima at!</p>
+                <h2 class="fw-bold font-nunito"><?= ternaryArgs($args, 'title', 'English resources to practice together'); ?></h2>
+                <p><?= ternaryArgs($args, 'description', 'We provide you specialized online tools to improve your English level.  <br/>Learning a new language has never been so easy and interesting until now!'); ?></p>
             </div>
 
         </header>

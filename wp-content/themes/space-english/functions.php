@@ -7,6 +7,13 @@ function space_english_setup(){
 
 add_action('after_setup_theme', 'space_english_setup');
 
+function space_english_menus(){
+    register_nav_menus( array(
+        'main_menu' => __('Main menu', 'space-english'),
+    ));
+}
+
+add_action( 'init', 'space_english_menus' );
 
 function space_english_scripts_styles(){
 
